@@ -5,14 +5,7 @@
         }
 
         public function index() {
-
-            $users = $this->userModel->getusers();
-
-            $data = [
-                'title' => 'Home page',
-                'users' => $users
-            ];
-            $this->view('pages/index', $data);
+            $this->view('pages/index');
         }
 
         public function about() {
