@@ -10,5 +10,6 @@
     <div class="banner">
         <h1>Lorem ipsum dolor sit amet</h1>
         <h2>consectetur adipiscing elit</h2>
+        
     </div>
 </div>
