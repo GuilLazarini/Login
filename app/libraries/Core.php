@@ -15,8 +15,22 @@
             }
             //Instatiate the new controller
             require_once '../app/controllers/' . $this->currentController . '.php';
-            $this->currentController = new $this->currentController; // override the currentController to the "Pages"
+            $this->currentController = new $this->currentController; 
+
+            //Check for the second part of the URL
+            if (isset($url[1])) {
+                if (method_exists($this->currentController, $url[1])) {
+                    $this->currentMethod = $url[1];
+                    unset($url[1]);
+                }
+            }
+            // Get parameters
+            $this->params = $url ? array_values($url) : []; //checking is there are any params and if it's not keep it empty
+
+            // call a callback with array of params
+            call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
         }
+
 
         public function getUrl() {
             if(isset($_GET['url'])) {
@@ -28,4 +42,4 @@
                return $url;
             }
         }
-}
+    }
