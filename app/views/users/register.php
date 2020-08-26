@@ -32,7 +32,7 @@
             <span class="confirmPasswordFeedback">
                 <?php echo $data ['passwordError']; ?>
             </span>
-            <button id="submit" type="submit" value="submit">Logar</button>
+            <button id="submit" type="submit" value="submit">Cadastrar</button>
             
         </form>
     </div>
