@@ -4,6 +4,21 @@ class Users extends Controller {
         $this->userModel = $this->model('User');
     }
 
+    public function register() {
+        $data = [
+            'usernameError' => '',
+            'email' => '',
+            'password' => '',
+            'confirmPassword' => '',
+            'usernameError' => '',
+            'emailError' => '',
+            'passwordError' => '',
+            'confirmPasswordError' => ''
+        ];
+
+        $this->view('users/register', $data);
+    }
+
     public function login() {
         $data = [
             'title' => 'Login page',
