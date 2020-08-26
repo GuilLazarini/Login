@@ -6,7 +6,10 @@ class Users extends Controller {
 
     public function login() {
         $data = [
-            'title' => 'Login page'
+            'title' => 'Login page',
+            'usernameError' => '',
+            'passwordError' => ''
+
         ];
 
         $this->view('users/login', $data);
